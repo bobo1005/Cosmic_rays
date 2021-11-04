@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title> Data analysis </title>
+		<meta name=viewport content=”width=device-width, initial-scale=1.0″>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400&display=swap');
+		
+			h1 {color: red;
+				font-family: 'Medium 500', 'Zen Kaku Gothic New', sans-serif;
+				text-align: center;
+				font-size: 70px;
+				
+				}
+			
+			.title{background-color: white;
+				   height: 100px;
+				   padding: 10px;}
+				 
+            .center {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					
+					}
+					
+      
+            .navbar {
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            .navbar a {
+              float: left;
+              font-size: 16px;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-family: 'Regular 400', 'Zen Kaku Gothic New', sans-serif;
+            }
+            
+            .dropdown {
+              float: left;
+              overflow: hidden;
+            }
+            
+            .dropdown .dropbtn {
+              font-size: 16px;  
+              border: none;
+              outline: none;
+              color: white;
+              padding: 14px 16px;
+              background-color:  #333;
+              font-family: 'Zen Kaku Gothic New', sans-serif;
+              margin: 0;
+            }
+            
+            .navbar a:hover, .dropdown:hover .dropbtn {
+              background-color: red;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+              float: none;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+            }
+            
+            .dropdown-content a:hover {
+              background-color: #ddd;
+            }
+            
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }	
+            
+            .active {
+              background-color: #E50000;
+              color: white;
+            }
+            		
+            		
+            .main_txt{
+                color: #39393C;
+                text-align: left;
+                font-family: 'Zen Kaku Gothic New', sans-serif;
+                font-size: 30px;
+                margin-left: 70px;
+                margin-right: 70px;
+            }	
+            
+            .container1{
+                padding: 50px;
+            
+            }	
+            		
+            footer {
+               text-align: center;
+               padding: 3px;
+               font-size: 18px;
+               background-color: #333;
+               color: white;
+               margin-top: 80px;
+               margin-bottom: 0px;
+               
+               
+               left: 0;
+               bottom: 0;
+               width: 100%;
+               
+             }  
+             
+           footer a {
+              color: #eeeeee;
+           }
+             
+           footer a:hover  {
+               color:red;
+           } 
+           
+           
+		</style>
+
+	</head>
+	
+	
+	<body>
+	
+    	
+         <div class="navbar">
+         <a href="{% url 'home' %}">Home</a>
+         <a class="active" href="{% url 'experimental' %}">Experimental Setup</a>
+         <a href="{% url 'abstract' %}">Abstract</a>
+        
+          <div class="dropdown">
+            <button class="dropbtn">Data Analysis 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'rate_angle' %}">Angle</a>
+              <a href="{% url 'rate_floor' %}">Floor</a>
+              <a href="{% url 'rate_altitude' %}">Altitude</a>
+            </div>
+          </div> 
+          
+        <a href="{% url 'photo' %}">Photos</a>
+        <a href="{% url 'contacts' %}">Contacts</a>
+        </div>
+          
+          
+        
+        
+		<div class="title">
+			<h1>Scintillation detector</h1>
+		</div>
+		
+		<div class="container1">
+		<p class="main_txt">The detector we used for our measurements is a scintillation detector which harnesses interactions between cosmic rays, subatomic particles coming from space, and scintillator material. 
+    	Because these particles are charged, they cause electrons of the material to shift to the outer shell, so the atom turns from the fundamental to the excited state.<br>
+        When electrons come back to the fundamental state, photons are emitted. This radiation is gathered and transmitted through a light guide to a photomultiplier, which generates electric current; this current is finally analysed by an electronic system.<br><br>
+
+        •	Our scintillator consists in two transparent plastic slabs which have these characteristics:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o	 Refractive index: 1.58<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o	Wavelength: 425 nm<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o	Max solid angle: 2.6 sr<br>
+        It is important that particles hit both slabs to determine a coincidence measurement; in this way we avoid interference of Earth’s radiation and data are more trustworthy.<br><br>
+        
+        •	The light guide is a plexiglass component of the detector which has refractive index of 1.58 and a total reflection.<br>
+        Its function is to convey light into the photomultiplier thanks to a series of reflections.<br><br>
+        
+        •	The photomultiplier consists in: a photocathode, which emits electrons if hit by radiation (according to photoelectric effect), dynodes, which multiply electrons in a waterfall effect, and the anode, which is the point where the beam of electrons is conveyed, ready to be measured.<br> 
+        
+        </p>
+		</div>
+		
+		<footer>
+        <p><a href="{% url 'home' %}">Home<a> | <a href="{% url 'abstract' %}">Abstract</a> | <a href="{% url 'photo' %}">Photos</a> | <a href="{% url 'contacts' %}">Contacts</a><br>
+        Cosmic rays project ©Liceo Ferraris Varese 
+        </footer>
+		
+		
+	</body>
+
+</html>

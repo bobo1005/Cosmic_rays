@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title> rate_angle </title>
+		<meta name=viewport content=”width=device-width, initial-scale=1.0″>
+		<style>
+		
+		@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400&display=swap');
+		
+			h1 {color: red;
+				font-family: 'Medium 500', 'Zen Kaku Gothic New', sans-serif;
+				text-align: center;
+				font-size: 70px;}
+			
+			.title{background-color: white;
+				   margin-top:5px;
+				   margin-bottom:30px;
+				   }
+				   
+			.img1{
+    			padding:20px;
+				 }
+				 
+				 
+			.center {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					
+					}
+					
+      
+          
+          .navbar {
+            overflow: hidden;
+            background-color: #333;
+          }
+          
+          .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Regular 400', 'Zen Kaku Gothic New', sans-serif;
+          }
+          
+          .dropdown {
+            float: left;
+            overflow: hidden;
+          }
+          
+          .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: red;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            margin: 0;
+          }
+          
+          .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          
+          .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+          }
+          
+          .dropdown-content a:hover {
+            background-color: #ddd;
+          }
+          
+          .dropdown:hover .dropdown-content {
+            display: block;
+            
+          }	
+          
+          
+          .main_txt{
+              color: #39393C;
+              text-align: left;
+              font-family: 'Zen Kaku Gothic New', sans-serif;
+              font-size: 30px;
+              margin-left: 70px;
+              margin-right: 70px;
+          }
+          
+          
+          
+            table, td, th {  
+              font-family: 'Zen Kaku Gothic New', sans-serif;
+              
+              font-size: 24px;
+              border: 2px solid #ddd;
+              text-align: center;
+              
+            }
+            
+            table {
+              border-collapse: collapse;
+              width: 30%;
+              margin-top: 70px;
+              margin-left: auto;
+              margin-right: auto;
+              margin-bottom: 70px;
+              
+            }
+            
+            tr:nth-child(even){
+                background-color: #f2f2f2
+            }
+            
+            th, td {
+              padding: 15px;
+            }
+            
+           
+           footer {
+              font-family: "Trebuchet MS", Helvetica, sans-serif;
+              text-align: center;
+              padding: 3px;
+              font-size: 18px;
+              background-color: #333;
+              color: white;
+              margin-top: 170px;
+              margin-bottom: 0px;
+              
+              position: bottom;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              
+            }  
+            
+          footer a {
+             color: #eeeeee;
+          }
+            
+          footer a:hover  {
+              color:red;
+          } 
+          
+                
+		</style>
+
+	</head>
+	
+	
+	<body>
+    	
+    	<div class="navbar">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'experimental' %}">Experimental Setup</a>
+        <a href="{% url 'abstract' %}">Abstract</a>
+       
+         <div  class="dropdown">
+           <button class="dropbtn">Data Analysis 
+             <i class="fa fa-caret-down"></i>
+           </button>
+           <div class="dropdown-content">
+             <a href="{% url 'rate_angle' %}">Angle</a>
+             <a href="{% url 'rate_floor' %}">Floor</a>
+             <a href="{% url 'rate_altitude' %}">Altitude</a>
+           </div>
+         </div> 
+         
+       <a href="{% url 'photo' %}">Photos</a>
+       <a href="{% url 'contacts' %}">Contacts</a>
+       </div>
+        
+		<div class="title">
+			<h1>Rate in fz. of radiant</h1>
+		</div>
+		
+		{% for object in objects %}
+    	<div class="img1">
+    		<img src="{{object.immagine.url}}" height="561px" width="800px" class="center" >
+    		
+    	</div>
+        {% endfor %}
+
+        <div class="main_txt">
+        <p>This graph is based on the data collected during our first laboratory experience. It therefore represents
+        cosmic ray flux variation as a function of the detector’s inclination measured in radians. The 6 points in the 
+        table represent the analysis result of the 6 measurements made at 6 increasing inclinations. </p> 
+        </div>
+        
+        <div style="overflow-x: auto;">
+        <table>
+          <tr>
+            <th>Angle (rad)</th>
+            <th>Rate (Hz)</th>
+          
+          </tr>
+          <tr>
+            <td>0</td>
+            <td>0.00415</td>
+            
+          </tr>
+          <tr>
+            <td>0.34</td>
+            <td>0.003678</td>
+            
+          </tr>
+          <tr>
+            <td>0.70</td>
+            <td>0.002734</td>
+            
+          </tr>
+          <tr>
+            <td>1.04</td>
+            <td>0.00195</td>
+            
+          </tr>
+           <tr>
+             <td>1.39</td>
+             <td>0.001</td>
+             
+           </tr>
+          <tr>
+            <td>1.57</td>
+            <td>0.00126</td>
+            
+          </tr>
+        </table>
+        </div>
+        
+        <div class="main_txt">
+        <p>To find the ordinate of those points, we calculated the mean value of each measurement 
+        and reported it on the graph relative to the slope of the corresponding measurement.<br>
+        The blue curve consists of a quadratic function found by interpolating the points with the help of Python programming language.</p> 
+        </div>
+        
+        <footer>
+        <p><a href="{% url 'home' %}">Home<a> | <a href="{% url 'abstract' %}">Abstract</a> | <a href="{% url 'photo' %}">Photos</a> | <a href="{% url 'contacts' %}">Contacts</a><br>
+        Cosmic rays project ©Liceo Ferraris Varese 
+        </footer>
+        
+	</body>
+
+</html>

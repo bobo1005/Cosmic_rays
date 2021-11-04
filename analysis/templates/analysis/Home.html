@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title> Data analysis </title>
+		<meta name=viewport content=”width=device-width, initial-scale=1.0″>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+		<style>
+		
+		@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400&display=swap');
+		
+			h1 {color: red;
+				font-family: 'Medium 500', 'Zen Kaku Gothic New', sans-serif;
+				text-align: center;
+				font-size: 70px;}
+			
+			.title{background-color: white;
+				   height: 100px;
+				   padding: 10px;}
+				 
+            .center {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					
+					}
+					
+      
+            .navbar {
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            .navbar a {
+              float: left;
+              font-size: 16px;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-family: 'Regular 400', 'Zen Kaku Gothic New', sans-serif;
+            }
+            
+            .dropdown {
+              float: left;
+              overflow: hidden;
+            }
+            
+            .dropdown .dropbtn {
+              font-size: 16px;  
+              border: none;
+              outline: none;
+              color: white;
+              padding: 14px 16px;
+              background-color:  #333;
+              font-family: 'Zen Kaku Gothic New', sans-serif;
+              margin: 0;
+            }
+            
+            .navbar a:hover, .dropdown:hover .dropbtn {
+              background-color: red;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+              float: none;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+            }
+            
+            .dropdown-content a:hover {
+              background-color: #ddd;
+            }
+            
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }	
+            
+            .active {
+              background-color: #E50000;
+              color: white;
+            }
+            		
+            		
+            		
+            		
+            footer {
+               text-align: center;
+               padding: 3px;
+               font-size: 18px;
+               background-color: #333;
+               color: white;
+               margin-top: 80px;
+               margin-bottom: 0px;
+               
+               
+               left: 0;
+               bottom: 0;
+               width: 100%;
+               
+             }  
+             
+           footer a {
+              color: #eeeeee;
+           }
+             
+           footer a:hover  {
+               color:red;
+           } 
+           
+           
+		</style>
+
+	</head>
+	
+	
+	<body>
+	
+    	
+         <div class="navbar">
+         <a class="active" href="{% url 'home' %}">Home</a>
+         <a href="{% url 'experimental' %}">Experimental Setup</a>
+         <a href="{% url 'abstract' %}">Abstract</a>
+        
+          <div class="dropdown">
+            <button class="dropbtn">Data Analysis 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'rate_angle' %}">Angle</a>
+              <a href="{% url 'rate_floor' %}">Floor</a>
+              <a href="{% url 'rate_altitude' %}">Altitude</a>
+            </div>
+          </div> 
+          
+        <a href="{% url 'photo' %}">Photos</a>
+        <a href="{% url 'contacts' %}">Contacts</a>
+        </div>
+          
+          
+        
+        
+		<div class="title">
+			<h1>Cosmics Rays Project 2021</h1>
+		</div>
+		
+		
+		
+		<footer>
+        <p><a href="{% url 'home' %}">Home<a> | <a href="{% url 'abstract' %}">Abstract</a> | <a href="{% url 'photo' %}">Photos</a> | <a href="{% url 'contacts' %}">Contacts</a><br>
+        Cosmic rays project ©Liceo Ferraris Varese 
+        </footer>
+		
+		
+	</body>
+
+</html>
